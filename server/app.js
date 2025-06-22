@@ -1,6 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const fireRoutes = require('./routes/fire');
+app.use('/api/fire', fireRoutes);
+const ambulanceRoutes = require('./routes/ambulance');
+app.use('/api/ambulance', ambulanceRoutes);
+const policeRoutes = require('./routes/police');
+app.use('/api/police', policeRoutes);
 require('dotenv').config();
 
 const app = express();
