@@ -1,20 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import FireService from './pages/FireService';
-import AmbulanceService from './pages/AmbulanceService';
 import PoliceService from './pages/PoliceService';
+import AmbulanceService from './pages/AmbulanceService';
+import FireBrigadeService from './pages/FireBrigadeService';
 
-export default function App() {
+function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/fire" element={<FireService />} />
-        <Route path="/ambulance" element={<AmbulanceService />} />
         <Route path="/police" element={<PoliceService />} />
+        <Route path="/ambulance" element={<AmbulanceService />} />
+        <Route path="/fire" element={<FireBrigadeService />} />
       </Routes>
     </Router>
   );
 }
+
+export default App;
