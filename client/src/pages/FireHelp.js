@@ -16,7 +16,8 @@ const FireHelp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem('token'); // Get token from login
+    const token = localStorage.getItem('token');
+
     try {
       await axios.post('http://localhost:5000/api/fire/report', {
         type,
@@ -33,9 +34,9 @@ const FireHelp = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Type of Emergency</label>
+      <label>Emergency Type</label>
       <select onChange={(e) => setType(e.target.value)} required>
-        <option value="">-- Select Type --</option>
+        <option value="">-- Select --</option>
         <option value="Fire">Fire</option>
         <option value="Building Collapse">Building Collapse</option>
         <option value="Explosion">Explosion</option>
