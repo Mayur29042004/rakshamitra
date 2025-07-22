@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const policeRoutes = require('./routes/policeRoutes');
+const ambulanceRoutes = require('./routes/ambulance.routes');
 require('dotenv').config();
 
 const app = express();
@@ -18,3 +20,5 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 app.use('/api/fire', require('./routes/fireRoutes'));
 app.use('/api/ambulance', require('./routes/ambulanceRoutes'));
 app.use('/uploads', express.static('uploads'));
+app.use('/api/police', policeRoutes);
+app.use('/api/ambulance', ambulanceRoutes);
